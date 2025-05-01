@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: C0F7B3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.project.BudgetOverviewController">
+   <children>
+      <GridPane prefHeight="600.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="525.6000244140625" minWidth="10.0" prefWidth="299.1999877929687" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.3999877929687" minWidth="10.0" prefWidth="302.4000122070312" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="192.4" minHeight="0.0" prefHeight="92.00000610351563" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="515.9999948501587" minHeight="10.0" prefHeight="375.19999389648444" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="2.400018310546841" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="63.400036621093705" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="522.0000213623047" minHeight="10.0" prefHeight="39.39996337890625" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#back" style="-fx-background-color: C0F7B3; -fx-border-color: black; -fx-border-width: 2;" text="Back" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Stanje budžeta" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <TableView fx:id="budgetsTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: C0F7B3; -fx-border-color: black; -fx-border-width: 3; -fx-padding: 3;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="categoryColumn" prefWidth="163.199951171875" style="-fx-background-color: white; -fx-border-color: C0F7B3;" text="Kategorija" />
+                <TableColumn fx:id="budgetAmountColumn" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: C0F7B3;" text="Budžet" />
+                  <TableColumn fx:id="timePeriodColumn" prefWidth="144.0" style="-fx-background-color: white; -fx-border-color: C0F7B3;" text="Za vremenski period" />
+                  <TableColumn fx:id="spentSoFarColumn" maxWidth="150.0" minWidth="124.0001220703125" prefWidth="138.39999999999998" style="-fx-background-color: white; -fx-border-color: C0F7B3;" text="Dosad potrošeno" />
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#openBudgetUpdateScreen" style="-fx-background-color: C0F7B3; -fx-border-color: white; -fx-border-width: 3;" text="Uredi" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

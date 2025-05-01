@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.project.HomeAdminController">
+   <children>
+      <MenuBar layoutY="79.0" prefHeight="30.0" prefWidth="800.0" style="-fx-background-color: C0F7B3;">
+        <menus>
+          <Menu mnemonicParsing="false" text="Prihodi">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openExpectedProfitOverviewScreen" text="Očekivani prihodi" />
+                  <MenuItem mnemonicParsing="false" onAction="#openProfitSaveScreen" text="Unesi prihod" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Rashodi">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openBudgetOverviewScreen" text="Budžeti" />
+              <MenuItem mnemonicParsing="false" onAction="#openExpenseSaveScreen" text="Unesi rashod" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Pregled">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#openCashflowOverviewScreen" text="Pregled prihoda i rashoda" />
+                  <MenuItem mnemonicParsing="false" onAction="#openAppEntityChangesOverview" text="Pregled unosa objekata u apl." />
+              </items>
+            </Menu>
+        </menus>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </MenuBar>
+      <GridPane prefHeight="75.0" prefWidth="800.0" style="-fx-background-color: C0F7B3;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Moje financije">
+               <font>
+                  <Font name="Elephant" size="46.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#logOut" style="-fx-border-color: white; -fx-background-color: C0F7B3; -fx-border-width: 4;" text="Log out" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="3.0" left="6.0" right="6.0" top="3.0" />
+               </padding>
+            </Button>
+         </children>
+      </GridPane>
+      <GridPane layoutY="114.0" prefHeight="488.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="162.1999938964844" minHeight="10.0" prefHeight="76.00000610351563" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="293.39997558593757" minHeight="10.0" prefHeight="262.3999938964844" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="172.39999999999998" minHeight="10.0" prefHeight="149.59998779296876" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Region prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: C0F7B3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="welcomeText" text="Dobro došli!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#openReminderCreationScreen" style="-fx-background-color: white; -fx-border-color: black; -fx-border-image-width: 2;" text="Upravljanje podsjetnicima" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Label fx:id="reminderText" text="Trenutno nemate nikakvih podsjetnika." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
